@@ -1,6 +1,6 @@
 {
   "name": "aquaduck",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Aquaduck aims to duplicate/replace the routing functionality in beeline",
   "main": "aquaduck.js",
   "directories": {
