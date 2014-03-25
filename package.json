@@ -1,14 +1,22 @@
 {
   "name": "aquaduck",
   "version": "0.0.0",
-  "description": "",
+  "description": "Aquaduck aims to duplicate/replace the routing functionality in beeline",
   "main": "aquaduck.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KoryNunn/aquaduck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoryNunn/aquaduck/issues"
+  },
+  "homepage": "https://github.com/KoryNunn/aquaduck"
 }

@@ -1,15 +1,17 @@
 module.exports = function aquaduck(routes, path){
 
     for(var key in routes){
-        var regex = key.replace(/`.*?`/g, '(.*?)'),
-            names = (/`(.*?)`/).exec(key),
-            match = new RegExp(regex).exec(url);
+        var regex = new RegExp('^' + key.replace(/`.*?`/g, '(.*?)') + '$'),
+            names = regex.exec(key),
+            match = regex.exec(path);
+
+        console.log(names, match);
 
         if(match){
             var tokens = {};
 
-            for(var i = 0; i < match.length; i++){
-                tokens[names[i]] = match[i];
+            for(var i = 1; i < match.length; i++){
+                tokens[names[i].slice(1,-1)] = match[i];
             };
 
 
