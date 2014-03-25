@@ -21,7 +21,11 @@ At the moment aquaduck only supports one kind of route matching:
             }
         };
 
-    aquaduck(routes, 'foo.com/majigger/whatsits');
+    var matchedRoute = aquaduck(routes, 'foo.com/majigger/whatsits');
+
+matchedRoute will contain .value .tokens, and .route, so you can use it to run the function:
+
+    matchedRoute.value(matchedRoute.tokens);
 
 Other beeline-like routing will be added in the future.
 

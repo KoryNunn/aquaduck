@@ -1,10 +1,10 @@
 var test = require('grape'),
     aquaduck = require('../');
 
-test('things', function(t){
+test('single value', function(t){
     t.plan(1);
 
-    aquaduck(
+    var routeMatch = aquaduck(
         {
             'foo.com/`thing`': function(tokens){
                 t.equal(tokens.thing, 'majigger');
@@ -12,12 +12,14 @@ test('things', function(t){
         },
         'foo.com/majigger'
     );
+
+    routeMatch.value(routeMatch.tokens);
 });
 
-test('things', function(t){
+test('multi value', function(t){
     t.plan(2);
 
-    aquaduck(
+    var routeMatch = aquaduck(
         {
             'foo.com/`thing`/`stuff`': function(tokens){
                 t.equal(tokens.thing, 'majigger');
@@ -26,4 +28,6 @@ test('things', function(t){
         },
         'foo.com/majigger/whatsits'
     );
+
+    routeMatch.value(routeMatch.tokens);
 });

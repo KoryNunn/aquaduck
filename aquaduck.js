@@ -14,9 +14,11 @@ module.exports = function aquaduck(routes, path){
                 tokens[names[i].slice(1,-1)] = match[i];
             };
 
-
-            routes[key](tokens);
-            return;
+            return {
+                route: key,
+                tokens: tokens,
+                value: routes[key]
+            };
         }
     }
 };
