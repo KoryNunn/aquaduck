@@ -5,8 +5,6 @@ module.exports = function aquaduck(routes, path){
             names = regex.exec(key),
             match = regex.exec(path);
 
-        console.log(names, match);
-
         if(match){
             var tokens = {};
 
